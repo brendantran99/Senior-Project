@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <title>Saint Martin's University</title>
+  </head>
+  <body>
+  
+	<link rel= "stylesheet" type = "text/css" href="log.css">	
+	
+		<div id = "CornerImg"></div>
+		<h1 id="Title"><span>Student Information</span></h1>
+	
+		<div id = "links"> 
+			<a id="registrar" href = "https://www.stmartin.edu/directory/office-registrar">Registrar</a>
+			<a id="AddDrop" href = "https://www.stmartin.edu/sites/default/files/smu-files/registrar/2019-add-drop-form-fillable.pdf">Add/Drop Form</a>
+			<a id="Change" href = "https://www.stmartin.edu/sites/default/files/smu-files/registrar/2019-change-major-advisor-fillable_0.pdf">Change Form</a>
+			<a id ="Max" href="https://www.stmartin.edu/sites/default/files/smu-files/registrar/2019-maximum-credit-exception-rev.pdf">Max Credit Form</a>
+			<a id="SelfServ" href="https://selfservice.stmartin.edu/selfservice/home.aspx">Self-Service</a>
+		</div>
+  
+  
+	<div id="margin">
+		<form method="post" action="tester.php">
+			<table>
+				<tr>
+					<td><b>Full Name: </td>
+					<td><input name = "name" type = "text"></input> </td>
+				</tr>
+				<tr>
+					<td><b>Student ID: </b></td>
+					<td><b><input name = "ID" type = "text"></input></b></td>
+				</tr>
+				<tr>
+					<td><b>Major: </b></td>
+					<td>
+						<select name = "major" id = "major">
+							<option value = "ComputerScience" id = "CSC" name = "ComputerScience">Computer Science</option>
+							<option value = "English" id = "ENG" name = "English">English</option>
+							<option value = "Math" id = "MTH" name = "Math">Math</option>
+						</select>
+					</td>
+				</tr>			
+			</table>
+
+			<br><b>Copy and Paste your Unofficial Transcript:</b><br>
+			<textarea name="transcript" rows="25" cols="100"></textarea>
+		<br>
+		<br>
+		<input type = "Submit" name = "Submit" value = "Submit">
+		</form>
+	</div>	
+  </body>
+</html>

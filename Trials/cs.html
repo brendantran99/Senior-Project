@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Finder</title>
+<style>
+
+</style>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $(".add-row").click(function(){
+            var name = $("#name").val();
+            var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + name + "</td><td>";
+            $("table tbody").append(markup);
+        });
+        
+        // Find and remove selected table rows
+        $(".delete-row").click(function(){
+            $("table tbody").find('input[name="record"]').each(function(){
+                if($(this).is(":checked")){
+                    $(this).parents("tr").remove();
+                }
+            });
+        });
+    });    
+</script>
+</head>
+<body>
+    <form>
+        <input type="text" id="name" placeholder="Enter a class">
+
+        <input type="button" class="add-row" value="Add Class">
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Class Type</th>
+                <th>Class Name</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" name="record"></td>
+                <td>CSC101</td>
+
+            </tr>
+        </tbody>
+    </table>
+    <button type="button" class="delete-row">Delete Row</button>
+</body> 
+</html>

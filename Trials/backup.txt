@@ -1,0 +1,80 @@
+<INPUT type="button" value="Add Row" id="button"/>
+<form id="myForm">
+<TABLE id="dataTable" >
+<TR><TD>
+<select id="selectCategory">
+<option>Choose a category</option>
+</select>
+</TD>
+<TD>
+<select id="selectSubCategory" >
+<option>Choose a sub-category</option>
+</select>
+</TD></TR>
+</TABLE>
+</form>
+
+
+$(function() {
+  $('#selectCategory').change(function() {
+    getSelectedItem(this, null);
+  });
+
+  $('#button').click(function() {
+    addRow('dataTable');
+  });
+
+  $('#button').click(function() {
+    removeRow('dataTable');
+  });
+  var jsonObj = {
+    "category1": ["subcat 1"],
+    "category2": ["subcat 2.1", "subcat 2.2"],
+    "category3": ["subcat 3.1", "subcat 3.2", "subcat 3.3"]
+  };
+  var keys = Object.keys(jsonObj);
+  var category_dropdown = document.getElementById("selectCategory");
+
+  var getSelectedItem = function(element, row) {
+    var e = element;
+    var selectedCategory = e.options[e.selectedIndex].value;
+    var sub_category_dropdown = (row != null ? row.getElementsByTagName("select")[1] : document.getElementById("selectSubCategory"));
+    sub_category_dropdown.options.length = 0;
+    for (var i = 0; i < jsonObj[selectedCategory].length; i++) {
+      sub_category_dropdown[sub_category_dropdown.length] = new Option(jsonObj[selectedCategory][i], jsonObj[selectedCategory][i]);
+    }
+  };
+
+  var addRow = function(tableID) {
+    var table = document.getElementById(tableID);
+    var rowCount = table.rows.length;
+    var row = table.insertRow(rowCount);
+    var colCount = table.rows[0].cells.length;
+
+    for (var i = 0; i < colCount; i++) {
+      var newcell = row.insertCell(i);
+      newcell.innerHTML = table.rows[0].cells[i].innerHTML;
+      newcell.childNodes[0].selectedIndex = 0;
+    }
+    var selects = row.getElementsByTagName("select");
+    selects[0].addEventListener('change', function() {
+      getSelectedItem(this, row)
+    }, false);
+    var button = document.createElement('input');
+    button.setAttribute('type', 'button');
+    button.setAttribute('value', 'Remove');
+    button.setAttribute('onclick', 'removeRow(r)');
+    row.appendChild(button);
+
+    function removeRow(r) {
+      var empTab = r.parentNode.rowIndex;
+        document.getElementById("empTable").deleteRow(empTab);
+
+    }
+  };
+
+
+  for (var keys in jsonObj) {
+    category_dropdown[category_dropdown.length] = new Option(keys, keys);
+  }
+});

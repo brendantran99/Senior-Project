@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+   <head>
+		<title>Semesters Planned</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+	$(function() {
+		$('#selectCategory').change(function() {getSelectedItem(this, null); });
+		$('#button').click(function() 
+			{addRow('dataTable');	});	
+		$('#remove').click(function() 
+			{deleteRow('dataTable');	});				
+	var classes = {//can probably use external text files for these later on
+		"Core": ["UNI101", "ENG101", "ENG102"],
+		"Major": ["CSC101", "CSC180", "CSC200",],
+		"Elective": ["ART101", "PSY101", "ECN201"]
+		};
+	var keys = Object.keys(classes);
+	var category_dropdown = document.getElementById("selectCategory");
+  	for (var keys in classes) {
+    category_dropdown[category_dropdown.length] = new Option(keys, keys);
+    }
+	var getSelectedItem = function(element, row) {
+		var e = element;
+		var selectedCategory = e.options[e.selectedIndex].value;
+		var sub_category_dropdown = (row != null ? row.getElementsByTagName("select")[1] : document.getElementById("selectSubCategory"));
+		sub_category_dropdown.options.length = 0;
+		for (var i = 0; i < classes[selectedCategory].length; i++) 
+        {
+			sub_category_dropdown[sub_category_dropdown.length] = new Option(classes[selectedCategory][i], classes[selectedCategory][i]);
+    	}
+	};
+   
+	var addRow = function(tableID) 
+	{
+		var table = document.getElementById(tableID);
+		var rowCount = table.rows.length;
+		var row = table.insertRow(rowCount);
+		var colCount = table.rows[0].cells.length;
+
+		for (var i = 0; i < colCount; i++) {
+			var newcell = row.insertCell(i);
+			newcell.innerHTML = table.rows[0].cells[i].innerHTML;
+			newcell.childNodes[0].selectedIndex = 0;
+    }
+	var selects = row.getElementsByTagName("select");
+		selects[0].addEventListener('change', function() 
+		{
+			getSelectedItem(this, row)
+		}, false);
+	};
+    
+	var deleteRow = function(element, row)
+	{
+    var e = element;
+    var selectedCatagory = e.options[e.selectedIndex].value;
+    var sub_category_dropdown = (row != null ? row.getElementsByTagName("select")[1] : document.getElementById("selectSubCategory"));
+    var table = document.getElementById(tableID);
+		for (var rowi= 0; rowi < table.rows.length; rowi++) 
+		{
+			var row = table.rows[rowi];
+			for (var rowi= 0; rowi < table.rows.length; rowi++) 
+			{
+				var input= document.getElementById("checker");
+				if (input.type=='checkbox' && input.checked) 
+				{
+					var fetch = row.getElementsByTagName("select");
+					fetch[0].addEventListener("click", function()
+					{
+						root.removeChild(selectedCatagory.parentNode.parentNode)	
+					}, false);
+				}
+				else
+				{
+					false;
+				}
+			}
+		}	
+  }
+});
+</script>
+   </head>
+   <body>
+	<INPUT type="button" value="Add Class" id="button" />
+<INPUT type="button" value="Remove Selected Classes" id = "remove"/>
+<form id="myForm">
+  <TABLE id="dataTable">
+    <TR>
+      <TD>
+        <select id="selectCategory">
+          <option>Choose Class Type</option>
+        </select>
+      </TD>
+      <TD>
+        <select id="selectSubCategory">
+          <option>Choose Class Type First</option>
+        </select>
+      </TD>
+	  <TD><INPUT type="checkbox" name="chk" id="checker"/></TD>
+    </TR>
+	
+  </TABLE>
+</form>
+
+   <a href = "builder.html"><input type = "Submit" value = "Submit"> </a>
+   </body>
+</html>

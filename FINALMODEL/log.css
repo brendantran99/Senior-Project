@@ -1,0 +1,91 @@
+html, body 			/*Disables horizontal scroll*/
+{		
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+/*This Section: Header Decoration*/
+
+h1#Title	/*Formats the Schedule Builder words and red background*/	
+{
+	background-color: #80171e;
+	
+	height:100px;
+	line-height:50px;
+	text-align: center;
+	border-bottom:4px solid #515452;
+	margin:0;
+	width: 100%;
+}
+
+div#CornerImg	/*Saint's Logo Formatting*/
+{
+	height: 90px;	/*Sizing and postioning of Saints Logo*/
+	width: 120px;
+	position: absolute;
+	left:10px; 
+	top:10px; /*Keep image at top and down 10px*/
+	
+	background: url("Logo.svg");
+	background-repeat:no-repeat;
+	background-size: 100px;
+}
+
+body	/*Removes border to make header fill to top and sides*/
+{
+	margin:0;
+}
+
+span	/*This is the white background of Schedule Builder and the black border*/
+{
+	background-color:white;
+	width:300px;
+	height:50px;	/*height should be half of h1Title height*/
+	margin-top:25px;		/*Should be half of span height*/
+	border:5px solid black;
+	display:inline-block;	/*Allows span to respond to margins*/
+}
+
+div#links	/*Creates link bar to pages to assist with scheduling*/
+{
+	background-color:black;	/*Decoration*/
+	box-shadow: 10px 5px 8px #888888;
+	font-family:Arial;
+	
+	margin-top:0px;	/*Position*/
+	margin-bottom:25px;
+
+	
+	height:30px;	/*Sizing*/
+	width:100%;
+	line-height:30px;
+}
+
+div#links a	/*Formats the links in link bar*/
+{
+	float:left;
+	color: white;
+	text-decoration: none;	/*keeps links from being underlined*/
+	font-family:Arial;
+	width:20%;	/*width should be 100/number of links*/
+	text-align:center;
+}
+
+
+
+
+/*This Section: Body Formatting*/
+
+div#margin
+{
+	margin-left:25px;
+}
+
+textarea{
+	width:75%;
+}
+
+
+
+

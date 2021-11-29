@@ -1,0 +1,177 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<title>Advisory System</title>
+<style>
+input[type=text] {
+  width: 95%;
+  padding: 6px 8px;
+  margin: 3px 0;
+  box-sizing: border-box;
+}
+input[type=text]:focus {
+  border: 3px solid #555;
+}
+input[type=submit]{
+  background-color: #f74343;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  margin: 2px 2px;
+  cursor: pointer;
+}
+h3 {text-align: center;}
+</style>
+</head>
+<body>
+<h3>Enter Your Completed Classes</h3>
+<form method="post" action="validate.php">
+<table cellspacing = "1" cellpadding = "1" border = "1" class="table">
+	<tr>
+		<td align = "center" style="background-color:#f74343">Semester 1</td>
+		<td align = "center" style="background-color:#f74343">Semester 2</td>
+		<td align = "center" style="background-color:#f74343">Semester 3</td>
+		<td align = "center" style="background-color:#f74343">Semester 4</td>
+		<td align = "center" style="background-color:#f74343">Semester 5</td>
+		<td align = "center" style="background-color:#f74343">Semester 6</td>
+		<td align = "center" style="background-color:#f74343">Semester 7</td>
+		<td align = "center" style="background-color:#f74343">Semester 8</td>
+	</tr>
+	<tr>
+		<td name = "a1"> <!--SEMESTER 1--> 
+			<input type="text" id="a11" name="a11">
+			<br>
+			<input type="text" id="a12" name="a12">
+			<br>
+			<input type="text" id="a13" name="a13">
+			<br>
+			<input type="text" id="a14" name="a14">
+			<br>
+			<input type="text" id="a15" name="a15">
+			<br>
+			<input type="text" id="a16" name="a16">
+			<br>
+			<input type="text" id="a17" name="a17">
+			<br>	
+		</td>
+		<td name = "b1"> <!--SEMESTER 2--> 
+			<input type="text" id="b11" name="b11">
+			<br>
+			<input type="text" id="b12" name="b12">
+			<br>
+			<input type="text" id="b13" name="b13">
+			<br>
+			<input type="text" id="b14" name="b14">
+			<br>
+			<input type="text" id="b15" name="b15">
+			<br>
+			<input type="text" id="b16" name="b16">
+			<br>
+			<input type="text" id="b17" name="b17">
+			<br>	
+		</td>
+		<td name = "c1"> <!--SEMESTER 3--> 
+			<input type="text" id="c11" name="c11">
+			<br>
+			<input type="text" id="c12" name="c12">
+			<br>
+			<input type="text" id="c13" name="c13">
+			<br>
+			<input type="text" id="c14" name="c14">
+			<br>
+			<input type="text" id="c15" name="c15">
+			<br>
+			<input type="text" id="c16" name="c16">
+			<br>
+			<input type="text" id="c17" name="c17">
+			<br>	
+		</td>
+		<td name = "d1"> <!--SEMESTER 4--> 
+			<input type="text" id="d11" name="d11">
+			<br>
+			<input type="text" id="d12" name="d12">
+			<br>
+			<input type="text" id="d13" name="d13">
+			<br>
+			<input type="text" id="d14" name="d14">
+			<br>
+			<input type="text" id="d15" name="d15">
+			<br>
+			<input type="text" id="d16" name="d16">
+			<br>
+			<input type="text" id="d17" name="d17">
+			<br>	
+		</td>
+		<td name = "e1"> <!--SEMESTER 5--> 
+			<input type="text" id="e11" name="e11">
+			<br>
+			<input type="text" id="e12" name="e12">
+			<br>
+			<input type="text" id="e13" name="e13">
+			<br>
+			<input type="text" id="e14" name="e14">
+			<br>
+			<input type="text" id="e15" name="e15">
+			<br>
+			<input type="text" id="e16" name="e16">
+			<br>
+			<input type="text" id="e17" name="e17">
+			<br>	
+		</td>
+		<td name = "f1"> <!--SEMESTER 6--> 
+			<input type="text" id="f11" name="f11">
+			<br>
+			<input type="text" id="f12" name="f12">
+			<br>
+			<input type="text" id="f13" name="f13">
+			<br>
+			<input type="text" id="f14" name="f14">
+			<br>
+			<input type="text" id="f15" name="f15">
+			<br>
+			<input type="text" id="f16" name="f16">
+			<br>
+			<input type="text" id="f17" name="f17">
+			<br>	
+		</td>
+		<td name = "g1"> <!--SEMESTER 7--> 
+			<input type="text" id="g11" name="g11">
+			<br>
+			<input type="text" id="g12" name="g12">
+			<br>
+			<input type="text" id="g13" name="g13">
+			<br>
+			<input type="text" id="g14" name="g14">
+			<br>
+			<input type="text" id="g15" name="g15">
+			<br>
+			<input type="text" id="g16" name="g16">
+			<br>
+			<input type="text" id="g17" name="g17">
+			<br>	
+		</td>
+		<td name = "h1"> <!--SEMESTER 8--> 
+			<input type="text" id="h11" name="h11">
+			<br>
+			<input type="text" id="h12" name="h12">
+			<br>
+			<input type="text" id="h13" name="h13">
+			<br>
+			<input type="text" id="h14" name="h14">
+			<br>
+			<input type="text" id="h15" name="h15">
+			<br>
+			<input type="text" id="h16" name="h16">
+			<br>
+			<input type="text" id="h17" name="h17">
+			<br>			
+		</td>
+	</tr>
+</table>
+	<tr>
+		<input type="submit" name="submit" value="Submit">
+	</tr>
+</form>
+</body>
+</html>
